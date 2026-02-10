@@ -12,13 +12,13 @@ type Experience = {
 
 const data = {
   name: "Shah Faisal Ahmad",
-  location: "Rajouri Kadal, Srinagar, Jammu & Kashmir, India",
+  location: "Srinagar, Jammu & Kashmir, India",
   phone: "+91 7780-846120",
   email: "shahf6738@gmail.com",
   github: "https://github.com/shahf6738",
-  linkedin: "https://www.linkedin.com/in/shah-faisal-ahmad-ba4a71212",
+  linkedin: "https://www.linkedin.com/in/shah-faisal-ba4a71212/",
   summary:
-    "Front-end Software Engineer with 3+ years of hands-on experience building scalable, performant, and interactive web applications. Proficient in React, TypeScript, JavaScript (ES6+), HTML5 and CSS3. Strong focus on clean code, responsive design and polished UI/UX for data-driven dashboards and web apps.",
+    "Software Engineer with 3.5 years of experience building scalable, data-driven web applications. Specialized in React and TypeScript for interactive dashboards, with hands-on exposure to Node.js, Express, and REST APIs for backend support and integrations.",
   skills: [
     "React",
     "TypeScript",
@@ -27,6 +27,9 @@ const data = {
     "Elastic UI (EUI)",
     "AmCharts 4",
     "Redux Toolkit",
+    "Node.js",
+    "Express",
+    "REST APIs",
     "Cypress",
     "OpenSearch Dashboards (OSD)",
     "Performance optimization",
@@ -35,14 +38,16 @@ const data = {
     {
       role: "Software Engineer — Front-end Development",
       company: "Everlytics, Bangalore",
-      period: "August 2022 – Present",
+      period: "August 2022 – January 2026",
       bullets: [
-        "Develop and maintain large, data-driven front-end applications using React, TypeScript, JavaScript, HTML, and CSS.",
-        "Build reusable, accessible and responsive UI components with Elastic UI (EUI) and create custom OpenSearch Dashboards (OSD) plugins.",
-        "Design and implement complex interactive charts and visualizations using AmCharts 4 and Elastic Charts.",
-        "Improve runtime performance through virtualization, memoization and efficient data transforms for high-volume datasets.",
-        "Manage application state with Redux Toolkit and write end-to-end tests using Cypress.",
-        "Contribute to the company website (modern, responsive pages built with JavaScript, HTML, and CSS).",
+        "Developed and maintained large, data-intensive web applications using React, TypeScript, JavaScript (ES6+), HTML5, and CSS3.",
+        "Built reusable, accessible, and responsive UI components using Elastic UI (EUI) and developed custom OpenSearch Dashboards (OSD) plugins.",
+        "Designed complex interactive visualizations using AmCharts 4 and Elastic Charts, including custom thresholds, axis formats, and high-performance time-series rendering.",
+        "Integrated and consumed REST APIs (JSON/HTTP), handled authentication headers, request/response parsing, and error handling.",
+        "Implemented basic Node.js scripts and small Express-style endpoints for internal tooling and prototype backend support.",
+        "Managed global application state using Redux Toolkit and implemented robust form, modal, and dropdown workflows.",
+        "Implemented automated end-to-end testing for major user journeys and edge cases using Cypress.",
+        "Contributed to company website and mobile site—building modern pages, improving mobile performance, and implementing SEO best practices.",
       ],
     },
   ] as Experience[],
@@ -53,35 +58,70 @@ const data = {
       year: "2021",
       extra: "CGPA: 7.34",
     },
-    { degree: "HSC", school: "JKBOSE", year: "2016", extra: "75.6%" },
-    { degree: "SSC", school: "JKBOSE", year: "2014", extra: "86.8%" },
   ],
   projects: [
     {
-      id: "number-predictor-game",
-      title: "number-predictor-game",
+      id: "todo-list-app",
+      title: "ToDo List Application",
       description:
-        "Interactive number prediction game showcasing modern web development techniques. Features animated UI elements, gradient backgrounds, responsive design, and an engaging user experience. Demonstrates clean code practices and contemporary CSS patterns.",
-      link: "https://github.com/shahf6738/number-predictor-game",
+        "A modern personal portfolio-style ToDo application built with React and TypeScript, featuring smooth animations, glassmorphism design, and responsive layouts. Demonstrates strong front-end engineering skills, component-based architecture, and UI/UX design sense.",
+      link: "https://github.com/shahf6738/ToDo-list-app",
     },
+
     {
       id: "name-prediction-game",
-      title: "name-prediction-game",
+      title: "Name Prediction Game",
       description:
         "Interactive mind-reading game that predicts any name you're thinking of using a clever mathematical algorithm.",
       link: "https://github.com/shahf6738/name-prediction-game",
     },
+
     {
       id: "shahtech-solutions-website",
-      title: "shahtech-solutions-website",
+      title: "Shahtech Solutions Website",
       description:
         "Modern, responsive technology consulting website showcasing IT services, industry solutions, and digital transformation expertise. Built with HTML, CSS, and JavaScript.",
       link: "https://github.com/shahf6738/shahtech-solutions-website",
     },
+    {
+      id: "number-predictor-game",
+      title: "Number Predictor Game",
+      description:
+        "Interactive number prediction game showcasing modern web development techniques. Features animated UI elements, gradient backgrounds, responsive design, and an engaging user experience. Demonstrates clean code practices and contemporary CSS patterns.",
+      link: "https://github.com/shahf6738/number-predictor-game",
+    },
   ] as Project[],
   certifications: [
-    "JavaScript Algorithms and Data Structures — freeCodeCamp",
-    "Responsive Web Design — freeCodeCamp",
+    {
+      title: "Software Engineer",
+      issuer: "HackerRank",
+      link: "https://www.hackerrank.com/certificates/52b283fb71ec",
+    },
+    {
+      title: "Frontend Developer (React)",
+      issuer: "HackerRank",
+      link: "https://www.hackerrank.com/certificates/3b16208b3620",
+    },
+    {
+      title: "Node.js",
+      issuer: "HackerRank",
+      link: "https://www.hackerrank.com/certificates/70893016279f",
+    },
+    {
+      title: "REST API",
+      issuer: "HackerRank",
+      link: "https://www.hackerrank.com/certificates/d8c936230b18",
+    },
+    {
+      title: "JavaScript Algorithms and Data Structures",
+      issuer: "freeCodeCamp",
+      link: "https://www.freecodecamp.org/certification/shahf6738/javascript-algorithms-and-data-structures",
+    },
+    {
+      title: "Responsive Web Design",
+      issuer: "freeCodeCamp",
+      link: "https://www.freecodecamp.org/certification/shahf6738/responsive-web-design",
+    },
   ],
 };
 
@@ -121,7 +161,7 @@ export default function App() {
       <header className="header glass-card">
         <div className="header-left">
           <h1 className="gradient-text">{data.name}</h1>
-          <p className="subtitle">Front-end Software Engineer</p>
+          <p className="subtitle">Software Engineer</p>
         </div>
         <nav className="nav">
           <a
@@ -262,11 +302,26 @@ export default function App() {
           <h2 className="section-title">About Me</h2>
           <div className="glass-card">
             <p className="about-text">
-              {data.summary} I also contribute to my current company's
-              public-facing website — building modern, responsive pages using
-              JavaScript, HTML and CSS as part of cross-functional
-              responsibilities. I'm passionate about creating intuitive user
-              experiences and writing clean, maintainable code.
+              I’m a Software Engineer with over three and a half years of
+              professional experience working on large-scale, data-intensive web
+              applications. My primary focus has been building robust and
+              interactive front-end systems using React and TypeScript,
+              especially for dashboards that handle real-time and high-volume
+              data.
+              <br />
+              <br />
+              In my role at Everlytics, I’ve worked extensively with Elastic UI
+              (EUI), AmCharts 4, and Elastic Charts to design meaningful
+              visualizations, while ensuring performance, accessibility, and
+              responsive behavior across devices. Alongside front-end
+              development, I’ve also contributed to backend support by
+              integrating REST APIs and working with Node.js and Express for
+              internal tools and prototypes.
+              <br />
+              <br />I enjoy translating complex requirements into clean,
+              maintainable code and intuitive user experiences. I’m particularly
+              interested in performance optimization, scalable UI architecture,
+              and building products that feel fast, reliable, and thoughtful.
             </p>
           </div>
         </section>
@@ -361,7 +416,7 @@ export default function App() {
                     {exp.company} · {exp.period}
                   </p>
                 </div>
-                <div className="experience-badge">Current</div>
+                <div className="experience-badge">Full-time</div>
               </div>
               <ul className="experience-list">
                 {exp.bullets.map((bullet, i) => (
@@ -394,7 +449,7 @@ export default function App() {
               <h2 className="section-title">Certifications</h2>
               <div className="cert-grid">
                 {data.certifications.map((cert) => (
-                  <div key={cert} className="cert-card glass-card">
+                  <div key={cert.link} className="cert-card glass-card">
                     <svg
                       width="20"
                       height="20"
@@ -404,7 +459,14 @@ export default function App() {
                       <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z" />
                       <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z" />
                     </svg>
-                    <span>{cert}</span>
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      {cert.title} — {cert.issuer}
+                    </a>
                   </div>
                 ))}
               </div>
