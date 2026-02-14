@@ -349,6 +349,25 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+.btn-resume {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(159, 122, 234, 0.5);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.btn-resume:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(159, 122, 234, 0.2),
+    rgba(236, 72, 153, 0.2)
+  );
+  border-color: #9f7aea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(159, 122, 234, 0.3);
+}
+
 .btn-full {
   width: 100%;
   justify-content: center;

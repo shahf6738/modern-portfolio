@@ -335,6 +335,15 @@ export default function App() {
                   </svg>
                   LinkedIn
                 </a>
+                <a
+                  className="btn btn-resume"
+                  href="/Shah_Faisal_Ahmad.pdf"
+                  download
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Download Resume
+                </a>
               </div>
             </div>
 
