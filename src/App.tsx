@@ -1,5 +1,6 @@
-// src/App.tsx
 import React, { useEffect, useState } from "react";
+import emailjs from "emailjs-com";
+
 import "./styles.css";
 
 type Project = { id: string; title: string; description: string; link: string };
@@ -20,6 +21,105 @@ const data = {
   summary:
     "Software Engineer with 3.5 years of experience building scalable, data-driven web applications. Specialized in React and TypeScript for interactive dashboards, with hands-on exposure to Node.js, Express, and REST APIs for backend support and integrations.",
   skills: [
+    {
+      category: "Frontend",
+      items: [
+        {
+          name: "React",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        },
+        {
+          name: "TypeScript",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        },
+        {
+          name: "JavaScript (ES6+)",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        },
+        {
+          name: "HTML5",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        },
+        {
+          name: "CSS3",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        },
+        {
+          name: "Redux Toolkit",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+        },
+        {
+          name: "Elastic UI (EUI)",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg",
+        },
+        {
+          name: "AmCharts 4",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chartjs/chartjs-original.svg",
+        },
+      ],
+    },
+    {
+      category: "Backend",
+      items: [
+        {
+          name: "Node.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+        },
+        {
+          name: "Express",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg",
+        },
+        {
+          name: "REST APIs",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+        },
+      ],
+    },
+    {
+      category: "Database & Scripting",
+      items: [
+        {
+          name: "Python",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+        },
+        {
+          name: "SQL",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+        },
+      ],
+    },
+    {
+      category: "Testing & Tools",
+      items: [
+        {
+          name: "Cypress",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg",
+        },
+        {
+          name: "Git",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+        },
+        {
+          name: "Linux",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+        },
+      ],
+    },
+    {
+      category: "Platforms & Engineering",
+      items: [
+        {
+          name: "OpenSearch Dashboards (OSD)",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg",
+        },
+        {
+          name: "Performance Optimization",
+          icon: "https://www.svgrepo.com/show/409878/rocket.svg",
+        },
+      ],
+    },
+  ],
+  topSkills: [
     "React",
     "TypeScript",
     "JavaScript (ES6+)",
@@ -27,12 +127,7 @@ const data = {
     "Elastic UI (EUI)",
     "AmCharts 4",
     "Redux Toolkit",
-    "Node.js",
-    "Express",
-    "REST APIs",
     "Cypress",
-    "OpenSearch Dashboards (OSD)",
-    "Performance optimization",
   ],
   experience: [
     {
@@ -128,6 +223,8 @@ const data = {
 export default function App() {
   const [activeSection, setActiveSection] = useState("about");
   const [scrollY, setScrollY] = useState(0);
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -171,16 +268,16 @@ export default function App() {
             About
           </a>
           <a
-            href="#projects"
-            className={activeSection === "projects" ? "active" : ""}
-          >
-            Projects
-          </a>
-          <a
             href="#experience"
             className={activeSection === "experience" ? "active" : ""}
           >
             Experience
+          </a>
+          <a
+            href="#projects"
+            className={activeSection === "projects" ? "active" : ""}
+          >
+            Projects
           </a>
           <a
             href="#contact"
@@ -286,7 +383,7 @@ export default function App() {
               <div className="skills-preview">
                 <h3>Top Skills</h3>
                 <div className="skill-tags">
-                  {data.skills.slice(0, 6).map((skill) => (
+                  {data.topSkills.slice(0, 6).map((skill) => (
                     <span key={skill} className="skill-tag">
                       {skill}
                     </span>
@@ -326,31 +423,60 @@ export default function App() {
           </div>
         </section>
 
+        {/* Experience */}
+        <section id="experience" className="section animate-in">
+          <h2 className="section-title">Work Experience</h2>
+          {data.experience.map((exp) => (
+            <div key={exp.role} className="experience-card glass-card">
+              <div className="experience-header">
+                <div>
+                  <h3 className="experience-role">{exp.role}</h3>
+                  <p className="experience-company">
+                    {exp.company} · {exp.period}
+                  </p>
+                </div>
+                <div className="experience-badge">Full-time</div>
+              </div>
+              <ul className="experience-list">
+                {exp.bullets.map((bullet, i) => (
+                  <li key={i}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </section>
+
         {/* Skills Bento Grid */}
         <section id="skills" className="section animate-in">
           <h2 className="section-title">Skills & Technologies</h2>
-          <div className="bento-grid">
-            {data.skills.map((skill, index) => (
-              <div
-                key={skill}
-                className="bento-item glass-card"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <div className="skill-icon">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
+
+          {data.skills.map((group, groupIndex) => (
+            <div key={group.category} style={{ marginBottom: "40px" }}>
+              <h3 style={{ marginBottom: "16px", opacity: 0.9 }}>
+                {group.category}
+              </h3>
+
+              <div className="bento-grid">
+                {group.items.map((skill, index) => (
+                  <div
+                    key={skill.name}
+                    className="bento-item glass-card"
+                    style={{ animationDelay: `${index * 0.05}s` }}
                   >
-                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
-                    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319z" />
-                  </svg>
-                </div>
-                <span className="skill-name">{skill}</span>
+                    <div className="skill-icon">
+                      <img
+                        src={skill.icon}
+                        alt={skill.name}
+                        width={28}
+                        height={28}
+                      />
+                    </div>
+                    <span className="skill-name">{skill.name}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </section>
 
         {/* Projects Grid */}
@@ -402,29 +528,6 @@ export default function App() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Experience */}
-        <section id="experience" className="section animate-in">
-          <h2 className="section-title">Work Experience</h2>
-          {data.experience.map((exp) => (
-            <div key={exp.role} className="experience-card glass-card">
-              <div className="experience-header">
-                <div>
-                  <h3 className="experience-role">{exp.role}</h3>
-                  <p className="experience-company">
-                    {exp.company} · {exp.period}
-                  </p>
-                </div>
-                <div className="experience-badge">Full-time</div>
-              </div>
-              <ul className="experience-list">
-                {exp.bullets.map((bullet, i) => (
-                  <li key={i}>{bullet}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </section>
 
         {/* Education & Certifications */}
@@ -539,16 +642,37 @@ export default function App() {
             <div className="contact-form-card glass-card">
               <h3>Send a message</h3>
               <form
+                className="contact-form"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  alert("Form submission would happen here!");
+                  setSending(true);
+                  setStatus(null);
+
+                  const form = e.target as HTMLFormElement;
+
+                  emailjs
+                    .sendForm(
+                      "service_oux02dc",
+                      "template_hb3g6bm",
+                      form,
+                      "WFi4-S0d52SSo0N4j"
+                    )
+                    .then(() => {
+                      setSending(false);
+                      setStatus("success");
+                      form.reset();
+                    })
+                    .catch(() => {
+                      setSending(false);
+                      setStatus("error");
+                    });
                 }}
-                className="contact-form"
               >
                 <div className="form-group">
                   <label htmlFor="name">Name</label>
                   <input
                     id="name"
+                    name="name"
                     type="text"
                     className="form-input"
                     placeholder="Your name"
@@ -559,6 +683,7 @@ export default function App() {
                   <label htmlFor="email">Email</label>
                   <input
                     id="email"
+                    name="email"
                     type="email"
                     className="form-input"
                     placeholder="your.email@example.com"
@@ -569,14 +694,19 @@ export default function App() {
                   <label htmlFor="message">Message</label>
                   <textarea
                     id="message"
+                    name="message"
                     className="form-textarea"
                     rows={5}
                     placeholder="Your message..."
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary btn-full">
-                  Send Message
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-full"
+                  disabled={sending}
+                >
+                  {sending ? "Sending..." : "Send Message"}
                   <svg
                     width="16"
                     height="16"
@@ -586,6 +716,17 @@ export default function App() {
                     <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
                   </svg>
                 </button>
+                {status === "success" && (
+                  <p style={{ color: "#4ade80", marginTop: "12px" }}>
+                    Message sent successfully. I’ll get back to you soon 🙂
+                  </p>
+                )}
+
+                {status === "error" && (
+                  <p style={{ color: "#f87171", marginTop: "12px" }}>
+                    Something went wrong. Please try again later.
+                  </p>
+                )}
               </form>
             </div>
           </div>
