@@ -151,7 +151,7 @@ const data = {
       degree: "B.E., Computer Science",
       school: "University of Kashmir",
       year: "2021",
-      extra: "CGPA: 7.34",
+      // extra: "CGPA: 10",
     },
   ],
   projects: [
@@ -222,13 +222,13 @@ const data = {
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("about");
-  const [scrollY, setScrollY] = useState(0);
+  // const [scrollY, setScrollY] = useState(0);
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      // setScrollY(window.scrollY);
 
       const sections = ["about", "projects", "experience", "contact"];
       const current = sections.find((section) => {
@@ -542,7 +542,7 @@ export default function App() {
                     <p className="edu-meta">
                       {edu.school} · {edu.year}
                     </p>
-                    <span className="edu-grade">{edu.extra}</span>
+                    {/* <span className="edu-grade">{edu.extra}</span> */}
                   </div>
                 ))}
               </div>
