@@ -15,18 +15,22 @@ const data = {
   name: "Shah Faisal Ahmad",
   location: "Srinagar, Jammu & Kashmir, India",
   phone: "+91 7780-846120",
-  email: "shahf6738@gmail.com",
+  email: "shahfaisal3867@gmail.com",
   github: "https://github.com/shahf6738",
   linkedin: "https://www.linkedin.com/in/shah-faisal-ba4a71212/",
   summary:
-    "Software Engineer with 3.5 years of experience building scalable, data-driven web applications. Specialized in React and TypeScript for interactive dashboards, with hands-on exposure to Node.js, Express, and REST APIs for backend support and integrations.",
+    "Software Engineer with 4+ years of experience building scalable, high-performance web applications with React.js, Next.js, and TypeScript. Experienced in frontend architecture, reusable component libraries, performance optimisation, Node.js, C#, ASP.NET Core, REST APIs, GraphQL, SQL Server, and enterprise SaaS products.",
   skills: [
     {
       category: "Frontend",
       items: [
         {
-          name: "React",
+          name: "React.js",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        },
+        {
+          name: "Next.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
         },
         {
           name: "TypeScript",
@@ -49,12 +53,12 @@ const data = {
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
         },
         {
-          name: "Elastic UI (EUI)",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg",
+          name: "Tailwind CSS",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
         },
         {
-          name: "AmCharts 4",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chartjs/chartjs-original.svg",
+          name: "Material UI",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
         },
       ],
     },
@@ -70,21 +74,41 @@ const data = {
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg",
         },
         {
+          name: "C# / .NET",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+        },
+        {
+          name: "ASP.NET Core",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
+        },
+        {
           name: "REST APIs",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+        },
+        {
+          name: "GraphQL",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
         },
       ],
     },
     {
-      category: "Database & Scripting",
+      category: "Databases",
       items: [
         {
-          name: "Python",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+          name: "SQL Server",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg",
         },
         {
           name: "SQL",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+        },
+        {
+          name: "MongoDB",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+        },
+        {
+          name: "Firebase",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg",
         },
       ],
     },
@@ -100,8 +124,12 @@ const data = {
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
         },
         {
-          name: "Linux",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+          name: "Docker",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+        },
+        {
+          name: "Figma",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
         },
       ],
     },
@@ -120,70 +148,81 @@ const data = {
     },
   ],
   topSkills: [
-    "React",
+    "React.js",
+    "Next.js",
     "TypeScript",
-    "JavaScript (ES6+)",
-    "HTML5 & CSS3",
-    "Elastic UI (EUI)",
-    "AmCharts 4",
+    "Node.js",
+    "C# / .NET",
     "Redux Toolkit",
-    "Cypress",
+    "GraphQL",
+    "SQL Server",
   ],
   experience: [
     {
-      role: "Software Engineer — Front-end Development",
-      company: "Everlytics, Bangalore",
+      role: "Software Engineer",
+      company: "Horizon Dream Vision",
+      period: "September 2026 – Present",
+      bullets: [
+        "Developed and maintained the BusTracker application with React.js and JavaScript, building responsive interfaces for live trip monitoring, bus locations, and route reports.",
+        "Integrated frontend applications with RESTful APIs and C# / .NET backend services to display real-time trip and driver data.",
+        "Implemented data-driven tables with search, sorting, pagination, and auto-refresh in responsive layouts.",
+        "Troubleshot frontend–backend integration issues and improved existing components, API connectivity, SQL Server integration, and data rendering.",
+      ],
+    },
+    {
+      role: "Software Engineer",
+      company: "Ematrix Solutions",
+      period: "January 2026 – September 2026",
+      bullets: [
+        "Built and maintained the backend API layer for an order aggregator platform using Node.js and Express.js, integrating 100+ external service providers.",
+        "Designed and implemented an Express.js RBAC system for authentication and authorization across 1,000+ client applications.",
+        "Automated pending-order status updates with Node.js, reducing manual effort from 3 minutes per order to processing 50 orders per second.",
+        "Developed responsive Next.js interfaces in TypeScript with Redux for consistent order and status state.",
+      ],
+    },
+    {
+      role: "Software Engineer",
+      company: "Everlytics Data Science Pte Ltd",
       period: "August 2022 – January 2026",
       bullets: [
-        "Developed and maintained large, data-intensive web applications using React, TypeScript, JavaScript (ES6+), HTML5, and CSS3.",
-        "Built reusable, accessible, and responsive UI components using Elastic UI (EUI) and developed custom OpenSearch Dashboards (OSD) plugins.",
-        "Designed complex interactive visualizations using AmCharts 4 and Elastic Charts, including custom thresholds, axis formats, and high-performance time-series rendering.",
-        "Integrated and consumed REST APIs (JSON/HTTP), handled authentication headers, request/response parsing, and error handling.",
-        "Implemented basic Node.js scripts and small Express-style endpoints for internal tooling and prototype backend support.",
-        "Managed global application state using Redux Toolkit and implemented robust form, modal, and dropdown workflows.",
-        "Implemented automated end-to-end testing for major user journeys and edge cases using Cypress.",
-        "Contributed to company website and mobile site—building modern pages, improving mobile performance, and implementing SEO best practices.",
+        "Designed and maintained accessible, high-performance React.js, Next.js App Router, and TypeScript applications for an AI-powered enterprise SaaS platform.",
+        "Built a reusable UI component library with Elastic UI and React Hooks while enforcing design-system consistency.",
+        "Created data-intensive 4Pointx interfaces with advanced tables, filtering, pagination across tens of thousands of records, expandable rows, drill-downs, dashboards, and real-time views.",
+        "Integrated REST APIs and GraphQL, managed async workflows, Axios interceptors, JWT refresh, protected routes, and timezone handling.",
+        "Managed state with Redux Toolkit and Context API across complex forms, modal pipelines, and validated multi-step journeys.",
+        "Improved Core Web Vitals with virtualization, memoisation, React Profiler, code splitting, lazy loading, SSR, and SSG.",
+        "Performed code reviews, debugging, production support, Cypress E2E testing, API and performance testing, security testing, and mentoring.",
       ],
     },
   ] as Experience[],
   education: [
     {
-      degree: "B.E., Computer Science",
+      degree: "Bachelor of Engineering (B.E.), Computer Engineering",
       school: "University of Kashmir",
-      year: "2021",
-      // extra: "CGPA: 10",
+      year: "2022",
     },
   ],
   projects: [
     {
-      id: "todo-list-app",
-      title: "ToDo List Application",
+      id: "healthcare-app",
+      title: "Healthcare App",
       description:
-        "A modern personal portfolio-style ToDo application built with React and TypeScript, featuring smooth animations, glassmorphism design, and responsive layouts. Demonstrates strong front-end engineering skills, component-based architecture, and UI/UX design sense.",
-      link: "https://github.com/shahf6738/ToDo-list-app",
-    },
-
-    {
-      id: "name-prediction-game",
-      title: "Name Prediction Game",
-      description:
-        "Interactive mind-reading game that predicts any name you're thinking of using a clever mathematical algorithm.",
-      link: "https://github.com/shahf6738/name-prediction-game",
-    },
-
-    {
-      id: "shahtech-solutions-website",
-      title: "Shahtech Solutions Website",
-      description:
-        "Modern, responsive technology consulting website showcasing IT services, industry solutions, and digital transformation expertise. Built with HTML, CSS, and JavaScript.",
-      link: "https://github.com/shahf6738/shahtech-solutions-website",
+        "Healthcare analytics dashboard built with React, TypeScript, Redux Toolkit, Firebase, and REST APIs.",
+      link: "https://github.com/shahf6738/healthcare-app",
     },
     {
-      id: "number-predictor-game",
-      title: "Number Predictor Game",
+      id: "gallery-web-app",
+      title: "Gallery Web App",
       description:
-        "Interactive number prediction game showcasing modern web development techniques. Features animated UI elements, gradient backgrounds, responsive design, and an engaging user experience. Demonstrates clean code practices and contemporary CSS patterns.",
-      link: "https://github.com/shahf6738/number-predictor-game",
+        "Responsive image gallery in React and TypeScript with browse, search, sort, select, and download features.",
+      link: "https://github.com/shahf6738/gallery-web-app",
+    },
+    {
+      id: "contact-management-app",
+      title: "Contact Management App",
+      description:
+        "React contact manager with full CRUD: create, search, edit, and delete contacts.",
+      link: "https://github.com/shahf6738/contact-management-app",
     },
   ] as Project[],
   certifications: [
@@ -337,7 +376,7 @@ export default function App() {
                 </a>
                 <a
                   className="btn btn-resume"
-                  href="/Shah_Faisal_Ahmad.pdf"
+                  href="/Shah_Faisal_Ahmad_Resume_.pdf"
                   download
                   target="_blank"
                   rel="noreferrer"
@@ -408,21 +447,15 @@ export default function App() {
           <h2 className="section-title">About Me</h2>
           <div className="glass-card">
             <p className="about-text">
-              I’m a Software Engineer with over three and a half years of
-              professional experience working on large-scale, data-intensive web
-              applications. My primary focus has been building robust and
-              interactive front-end systems using React and TypeScript,
-              especially for dashboards that handle real-time and high-volume
-              data.
+              I’m a Software Engineer with 4+ years of experience building
+              scalable, high-performance web applications with React.js,
+              Next.js, TypeScript, and modern frontend architecture.
               <br />
               <br />
-              In my role at Everlytics, I’ve worked extensively with Elastic UI
-              (EUI), AmCharts 4, and Elastic Charts to design meaningful
-              visualizations, while ensuring performance, accessibility, and
-              responsive behavior across devices. Alongside front-end
-              development, I’ve also contributed to backend support by
-              integrating REST APIs and working with Node.js and Express for
-              internal tools and prototypes.
+              My experience includes reusable component libraries, enterprise
+              SaaS products, data-intensive dashboards, authentication and
+              RBAC, REST APIs, GraphQL, Node.js, Express.js, C#, ASP.NET Core,
+              and SQL Server.
               <br />
               <br />I enjoy translating complex requirements into clean,
               maintainable code and intuitive user experiences. I’m particularly
